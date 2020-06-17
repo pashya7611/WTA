@@ -1,0 +1,36 @@
+<div class="container">   
+	<router-outlet></router-outlet>
+	<!-- <ul>
+		<li>Name: Prasad Jagtap</li><br>
+		<li> MEAN stack application</li><br>
+		<li>Performed CRUD Operations</li>
+	 </ul> -->
+	 <h2>You can add Employees in the table below</h2>
+ </div>
+
+
+
+<div class="emp">
+<table class="table table-bordered">
+		  <thead>
+			<tr>
+			  <td>Name</td>
+			  <td>Post</td>
+			  <td>Department</td>
+			  <td width="300" align="center">What do you want to do?</td>
+			</tr>
+		  </thead>
+		  <tbody>
+			 <tr  *ngFor="let employee of employees">
+				<td>{{employee.name}}</td>
+				<td>{{employee.position}}</td>
+				<td>{{employee.department}}</td>
+				<td width="275"> 
+					<a class="btn btn-info" routerLink="/show/{{employee._id}}">Detail</a> 
+					<a class="btn btn-success"  routerLink="/edit/{{employee._id}}">Update</a>
+					<a class="btn btn-danger" (click)="deleteEmployee(employee._id)">Delete</a>
+				</td>
+			 </tr>
+		  </tbody>
+		</table>
+	</div>
